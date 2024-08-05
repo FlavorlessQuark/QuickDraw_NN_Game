@@ -15,6 +15,7 @@
     "electron-reloader": "^1.2.3"
   },
   "dependencies": {
+    "@tensorflow/tfjs": "^4.20.0",
     "python-shell": "^5.0.0"
   }
 }
