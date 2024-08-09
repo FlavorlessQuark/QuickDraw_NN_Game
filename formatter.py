@@ -3,11 +3,10 @@ import numpy as np
 import os
 
 
-# files = os.listdir("data")
+files = os.listdir("data/raw")
 
 # while
-imgsA = np.load("data/raw/apple.npy")
-imgsB = np.load("data/raw/axe.npy")
+
 
 # print(imgs[0])
 
@@ -34,8 +33,12 @@ def format_data(data, train_ct, test_ct, name) :
         f.write(bytes(test_data))
 
 
-format_data(imgsA, 100, 50, "apple")
-format_data(imgsB, 100, 50, "axe")
+TRAIN_CT = 5000
+TEST_CT = 500
+for x in files:
+    images = np.load("data/raw/" + x)
+    format_data(images, TRAIN_CT, TEST_CT, x[:-4])
+# print(files)
 # imgs[1].astype('uint8').tofile('test.bin')
 # plt.imshow(curr,cmap="grey")
 # plt.show()
